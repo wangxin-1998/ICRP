@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息条目陈列页面</title>
+</head>
+<script src="../static/jquery.min.js"></script>
+<body>
+
+<a href="#" id="toDetail_info" >稻瘟病</a>
+<!--捕捉点击链接动作，将链接文本作为参数传到后台-->
+<script type="text/javascript">
+$(document).ready(function(){
+    var info_name=$("#toDetail_info").text();<!--获取标签文本-->
+    $("#toDetail_info").click(function(){    <!--定义点击后动作函数-->
+	    $("#toDetail_info").attr("href","http://127.0.0.1:5000/detail_info/"+info_name);
+	  });<!--利用a标签传递参数-->
+	});
+</script>
+<!--
+<ul>
+    <li><a href="#"  >稻瘟病</a></li>
+    <li><a href="#"  >水稻白叶枯病</a></li>
+    <li><a href="#"  >稻细菌性条斑病</a></li>
+    <li><a href="#"  >稻纹枯病</a></li>
+</ul>
+<script type="text/javascript">
+$(document).ready(function(){
+    var info_name=$("this").text();
+    $("a").click(function(){
+	    $("a").attr("href","http://127.0.0.1:5000/detail_info/"+info_name);
+	  });
+	});
+</script>-->
+</body>
+</html>
