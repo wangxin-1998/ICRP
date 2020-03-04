@@ -18,10 +18,8 @@ def detail_info(a):
     #print(sql)
     cur.execute(sql)
     u = cur.fetchall()
-    print(u[0][1])
     conn.close()
     return render_template('detail_info.html',u=u)
-
 if __name__ == '__main__':
     app.run()
 

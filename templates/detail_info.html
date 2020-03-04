@@ -2,10 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
     <title>详细信息</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link  rel="stylesheet" type="text/css"  href="../static/bootstrap.css" />-->
 </head>
 <body>
-<section>
+<div class="container">
+    <div class="alert-heading">
+        <h1 class="align-items-center">
+            {{ u[0][1] }}
+            <img src="/static/pics/002.jpg" width="200" height="200" alt="none">
+        </h1>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row clearfix">
+        <div class="col-md-4 column">
+            <h2>
+                病原
+            </h2>
+            <p>
+                {{ u[0][2] }}
+            </p>
+        </div>
+        <div class="col-md-4 column">
+            <h2>
+                症状
+            </h2>
+            <p>
+                {{ u[0][3] }}
+            </p>
+        </div>
+        <div class="col-md-4 column">
+            <h2>
+                建议
+            </h2>
+            <p>
+                {{ u[0][4] }}
+            </p>
+        </div>
+    </div>
+        </div>
+    </div>
+
+</div>
+<!--<section>
 <h1>病名</h1>
 <p>
     {{ u[0][1] }}
@@ -31,6 +73,6 @@
 <p>
     {{ u[0][4] }}
 </p>
-</section>
+</section>-->
 </body>
 </html>
