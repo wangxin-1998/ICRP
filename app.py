@@ -12,7 +12,7 @@ def browseInfo():
     conn = pymysql.connect(host='icrpmysql.mysql.database.chinacloudapi.cn', user='icrpmysql@icrpmysql',
                            password='IC123rp456', db='ICRP', charset='utf8')
     cur = conn.cursor()
-    sql = "select * from disease_infomation"
+    sql = "select * from disease_infomation order by 访问次数 desc"
     cur.execute(sql)
     u = cur.fetchall()
     conn.close()

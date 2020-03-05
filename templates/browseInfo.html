@@ -68,10 +68,10 @@
 	-->
     <div class="col-sm-8">
         {% for item in u %}
-		<h2 class="active"><a href="/detail_info/稻瘟病">{{ item[1] }}</a></h2>
+		<h2 class="active"><a href='/detail_info/{{ item[1] }}' >{{ item[1] }}</a></h2>
       <h5>副标题</h5>
       <!--<div class="fakeimg">图像</div>-->
-        <img src="/static/pics/稻胡麻叶斑病.jpeg" class="img-rounded">
+        <img src="/static/pics/{{ item[1] }}.jpeg" width="300" height="300" alt="none">
       <p>一些文本..</p>
       <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
       <br>
