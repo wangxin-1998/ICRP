@@ -1,0 +1,55 @@
+{# author:高璆华 #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.ico') }}">
+    <title>病虫害识别与诊断</title>
+    <script src="../static/js/jquery.min.js"></script>
+    <link href="../static/css/homepage.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="title"> <b> 水稻病虫害防治 </b> </div>
+    <div id="tim"></div>
+    <div class="c4"></div>
+    <div class="c44"><b>识别系统</b> </div>
+
+    <div class="dropdown">
+            <a class="dropbtn" align="center"><b>导航</b></a>
+            <div class="dropdown-content">
+                <a href="/">首页</a>
+                <a href="/Catchrp.html">水稻病虫害在线诊断</a>
+                <a href="/">水稻病虫害信息浏览</a>
+            </div>
+    </div>
+    <div class="c5">
+        <div>
+            <b align="center"> Error! </b>
+            {{ get_flashed_messages()[0] }}
+            <form method="GET" action="/Catchrp.html" >
+                <input type="submit" value="返回"  class="button-new" style="margin-top:15px;"/>
+            </form>
+        </div>
+    </div>
+    <div class="button1"></div>
+    <div class="button"  align="center">
+        欢迎访问 ICRP 水稻病虫害识别网站
+        <br>
+        如果您在访问过程中有相关问题或建议请致电：158 0269 4178
+    </div>
+<script>
+        function gettime() {
+            $.ajax({
+               url:"/time",
+               timeout:10000,
+               success:function (data) {
+                   $("#tim").html(data)
+               },
+               error:function (xhr,type,erroeThrom) {
+               }
+            });
+        }
+        setInterval(gettime)
+    </script>
+</body>
+</html>
