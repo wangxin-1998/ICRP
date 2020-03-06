@@ -1,97 +1,69 @@
+<!--
+author:许诗瑶
+-->
 <!DOCTYPE html>
+
 <html>
 <head>
+    <header class="bs-docs-nav navbar navbar-static-top" id="top"></header>
 	<meta charset="utf-8">
 	<title>水稻病虫害信息浏览</title>
-	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-    .fakeimg {
-        height: 200px;
-         background: #aaa;
-    }
-  </style>
+	<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<script src="static/jquery.min.js"></script>
+	<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
-<ul class="breadcrumb">
-	<li><a href="/">主页</a></li>
-	<li class="active">信息浏览</li>
-</ul>
-
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>水稻病虫害信息页面</h1>
-  <!--<p>重置浏览器窗口大小查看效果！</p>-->
+<!-- 插入图片 -->
+<div>
+    <img src="/static/pics/bg.jpg" width="100%" height="200">
 </div>
 
-<!--
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">网站名</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">主页</a></li>
-        <li><a href="#">页面 2</a></li>
-        <li><a href="#">页面 3</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
--->
+<!-- 面包屑导航分层 -->
+<ul class="breadcrumb">
+	<li><a href="/" style="font-size: 20px; color: #3c763d ">主页 <span class="glyphicon glyphicon-home"></span></a></li>
+	<li class="active" style="font-size: 20px">信息浏览 <span class="glyphicon glyphicon-search"></span></li>
+</ul>
 
 
 <div class="container">
   <div class="row">
-	<!--
+
+    <!-- 显示云词图 占用4列 -->
     <div class="col-sm-4">
-      <h2>关于我</h2>
-      <h5>我的照片:</h5>
-      <div class="fakeimg">这边插入图像</div>
-      <p>关于我的介绍..</p>
-      <h3>链接</h3>
-      <p>描述文本。</p>
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#">链接 1</a></li>
-        <li><a href="#">链接 2</a></li>
-        <li><a href="#">链接 3</a></li>
-      </ul>
-      <hr class="hidden-sm hidden-md hidden-lg">
+      <h3 style=" color: #3c763d">热词榜</h3>
+        <br><br>
+      <img src="/static/pics/wc.png" width="300" height="900">
     </div>
-	-->
+
+    <!-- 8列显示数据 -->
     <div class="col-sm-8">
+        <!-- 对数据库传来u的每一行数据item遍历 -->
         {% for item in u %}
-		<h2 class="active"><a href='/detail_info/{{ item[1] }}' >{{ item[1] }}</a></h2>
-      <h5>副标题</h5>
-      <!--<div class="fakeimg">图像</div>-->
-        <img src="/static/pics/{{ item[1] }}.jpeg" width="300" height="300" alt="none">
-      <p>一些文本..</p>
-      <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
-      <br>
+            <!-- 下划线+跳转链接 -->
+		    <h3 class="active"><a href='/detail_info/{{ item[1] }}' style="color: #3c763d" ><u>{{ item[1] }}</u></a></h3>
+            <!-- 显示内容简要 -->
+            <p>{{ item[2] }}</p>
+            <!-- 显示图片 -->
+            <img src="/static/pics/{{ item[1] }}.jpeg" width="600" height="300" alt="none">
+            <br><br><br>
         {% endfor %}
-        <!--
-      <h2 class="active"><a href="/detail_info/水稻白叶枯病">{{ u[1][1] }}</a></h2>
-      <h5>副标题</h5>
-        <img src="/static/pics/002.jpg" width="200" height="200" alt="none">
-      <p>一些文本..</p>
-      <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
-      -->
     </div>
   </div>
 </div>
 
+<!-- 返回顶部 -->
+<div align="center">
+    <a href="#top" class="back-to-top" style="color: #3c763d"> 返回顶部 </a>
+    <br><br>
+</div>
 
-
-
+<!-- 尾部信息 -->
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>底部内容</p>
+  <p style="font-size: 15px">欢迎访问 ICRP 水稻病虫害识别网站<br>
+      如果您在访问过程中有相关问题或建议请致电：130 1118 5959
+  </p>
 </div>
 </body>
 </html>

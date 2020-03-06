@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f746b02-ab0d-4cd1-9cd5-609ef231dc28" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/pics/水稻白叶枯病.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/pics/稻瘟病.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/pics/稻纹枯病.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/pics/稻细菌性条斑病.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ICRP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ICRP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pics/002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pics/稻曲病.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pics/稻胡麻叶斑病.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/browseInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/browseInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +28,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Yi57FlZzvMFoPjo7oOxsPrY3p5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -56,6 +52,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/pics" />
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="F:\ICRP-Info_browse\ICRP\templates" />
       <recent name="F:\ICRP-Info_browse\ICRP\static" />
       <recent name="F:\ICRP-Info_browse\static" />
@@ -125,6 +122,12 @@
       <updated>1583048856364</updated>
       <workItem from="1583412412744" duration="184000" />
       <workItem from="1583412668727" duration="1814000" />
+      <workItem from="1583492494656" duration="877000" />
+      <workItem from="1583497465057" duration="11011000" />
+      <workItem from="1583512543987" duration="154000" />
+      <workItem from="1583512708856" duration="93000" />
+      <workItem from="1583512805337" duration="788000" />
+      <workItem from="1583513608849" duration="404000" />
     </task>
     <servers />
   </component>
@@ -144,28 +147,28 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1583413088309" />
-    <state width="1238" height="211" key="GridCell.Tab.0.bottom" timestamp="1583414804216">
+    <state width="1238" height="180" key="GridCell.Tab.0.bottom" timestamp="1583514033599">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="211" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1583414804216" />
-    <state width="1238" height="211" key="GridCell.Tab.0.center" timestamp="1583414804215">
+    <state width="1238" height="180" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1583514033599" />
+    <state width="1238" height="180" key="GridCell.Tab.0.center" timestamp="1583514033597">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="211" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1583414804215" />
-    <state width="1238" height="211" key="GridCell.Tab.0.left" timestamp="1583414804214">
+    <state width="1238" height="180" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1583514033597" />
+    <state width="1238" height="180" key="GridCell.Tab.0.left" timestamp="1583514033596">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="211" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1583414804214" />
-    <state width="1238" height="211" key="GridCell.Tab.0.right" timestamp="1583414804215">
+    <state width="1238" height="180" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1583514033596" />
+    <state width="1238" height="180" key="GridCell.Tab.0.right" timestamp="1583514033598">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="211" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1583414804215" />
-    <state x="294" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1583412413698">
+    <state width="1238" height="180" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1583514033598" />
+    <state x="294" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1583492523580">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="294" y="234" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1583412413698" />
+    <state x="294" y="234" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1583492523580" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ICRP$app.coverage" NAME="app Coverage Results" MODIFIED="1583414777683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ICRP$app.coverage" NAME="app Coverage Results" MODIFIED="1583513983614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
