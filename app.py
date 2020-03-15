@@ -1,12 +1,52 @@
 '''
 author:许诗瑶
 '''
+import os
 
-from flask import Flask,request,render_template
-import numpy as np
+import pymsgbox as pymsgbox
+from flask import Flask, request, render_template, redirect
 from wordcloud import WordCloud
 import pymysql
 app = Flask(__name__)
+
+# 生成词云 author:许诗瑶
+def getWL():
+    # 连接数据库获取数据
+    conn = pymysql.connect(host='icrpmysql.mysql.database.chinacloudapi.cn', user='icrpmysql@icrpmysql',
+                           password='IC123rp456', db='ICRP', charset='utf8')
+    cur = conn.cursor()
+    # 生成词云
+    sql = "select 病名,访问次数 from disease_infomation"
+    cur.execute(sql)
+    wlist = cur.fetchall()
+    # 将病名及频次整理为dic格式
+    name = [col[0] for col in wlist]
+    value = [col[1] for col in wlist]
+    wlist = dict(zip(name, value))
+    # print(wlist)
+
+    path = os.path.dirname(os.path.realpath(__file__))
+    # 设置词云
+    wc = WordCloud(
+        # 设置背景颜色
+        background_color="white",
+        # 设置字体
+        # ？？？ 为什么./不能代替为本工程路径 ？？？
+        font_path=path+"/static/simhei.ttf",
+        # font_path="./static/simhei.ttf",
+        # 设置图像大小
+        width=300,
+        height=900
+    )
+
+    wc.generate_from_frequencies(wlist) # 根据词频生成词云
+    #wc.generate(wlist)  # 生成词云
+    # ？？？ 为什么./不能代替为本工程路径 ？？？
+    wc.to_file(path+'/static/pics/wc.png')  # 把词云保存下
+    # wc.to_file('/static/pics/wc.png')  # 把词云保存下
+
+    conn.close()
+
 
 @app.route('/')
 def index():
@@ -24,37 +64,34 @@ def browseInfo():
     cur.execute(sql)
     u = cur.fetchall()
 
-    # 生成词云
-    sql = "select 病名 from disease_infomation order by 访问次数 desc"
-    cur.execute(sql)
-    wl = cur.fetchall()
-    # 将病名整理为字符串格式（空格分割）
-    wl = " ".join(str(i) for i in wl)
-    wl=wl.replace(',','')
-    wl=wl.replace('(', '')
-    wl=wl.replace(')', '')
-    wl=wl.replace('\'', '')
-
-    # 设置词云
-    wc = WordCloud(
-        # 设置背景颜色
-        background_color="white",
-        # 设置字体
-        font_path='./static/simhei.ttf',
-        # 设置图像大小
-        width=300,
-        height=900
-    )
-
-    wc.generate(wl)  # 生成词云
-    wc.to_file('static/pics/wc.png')  # 把词云保存下
-
     # 关闭数据库连接
     conn.close()
 
-    # 数据库数据u传递
-    return render_template('browseInfo.html',u=u)
+    # 获取搜索框内容，初始为空
+    searchValue = str(request.args.get("searchValue"))
+    if(searchValue=="None"):
+        searchValue = ""
 
+    # 数据库数据u传递  搜索值默认为空
+    return render_template('browseInfo.html',u=u,sValue=searchValue)
+
+# 删除信息条目
+@app.route('/deleteItem',methods=['GET','POST'])
+def deleteItem():
+    # 连接数据库获取数据
+    conn = pymysql.connect(host='icrpmysql.mysql.database.chinacloudapi.cn', user='icrpmysql@icrpmysql',
+                           password='IC123rp456', db='ICRP', charset='utf8')
+    cur = conn.cursor()
+    if (request.method == 'POST'):
+        # 执行sql语句获取数据
+        no = request.form.get("no")
+        sql = "DELETE FROM `icrp`.`disease_infomation` WHERE (`编号` = '"+ no +"')"
+        # print(sql)
+        cur.execute(sql)
+        conn.commit()
+        conn.close()
+        return redirect(request.referrer)
+        # return render_template('browseInfo.html')
 
 
 @app.route('/detail_info/<a>')
